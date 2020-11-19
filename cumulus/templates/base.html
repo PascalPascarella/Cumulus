@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <ul class="nav">
+        <li class="nav-link">
+            <a href="{{url_for(core.index)}}" class="href">HOME</a>
+        </li>
+        <li class="nav-link">
+            <a href="{{url_for(core.info)}}" class="href">ABOUT</a>
+        </li>
+        <li class="nav-link">
+            <a href="#" class="href">ACCOUNT</a>
+        </li>
+        <li class="nav-link">
+            <a href="#" class="href">REGISTER</a>
+        </li>
+        <li class="nav-link">
+            <a href="#" class="href">LOGIN</a>
+        </li>
+        <li class="nav-link">
+            <a href="#" class="href">LOGOUT</a>
+        </li>
+        <li class="nav-link">
+            <a href="#" class="href">CREATE POST</a>
+        </li>
+    </ul>
+    <div class="container">
+        {% block content %}
+
+        {% endblock %}
+    </div>
+
+</body>
+</html>
