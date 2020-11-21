@@ -11,7 +11,7 @@ from cumulus.users.picture_handler import add_profile_pic
 #############################
 
 # REGISTER -- Complete
-# LOGIN
+# LOGIN -- Complete
 # LOGOUT -- Complete
 # ACCOUNT (UPDATE UserForm)
 # USER'S LIST OF POSTINGS
@@ -60,5 +60,5 @@ def login():
 @users.route('/logout')
 def logout():
     logout_user()
-    
+
     return redirect(url_for("core.index"))
