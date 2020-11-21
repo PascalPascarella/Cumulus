@@ -18,9 +18,22 @@ from cumulus.users.picture_handler import add_profile_pic
 
 users = Blueprint('users',__name__)
 
+@users.route('/register',methods=['Get','POST'])
+def register():
+    form = RegistrationForm()
 
+    if form.validate_on_submit():
+        user = User(email=form.email.data,
+                    username=form.username.data,
+                    password=form.password.data)
+        db.session.add(user)
+        deb.session.commit()
+        flash('Thanks for registering!')
+        return redirect(url_for('user.login'))
 
-@users.route("/logout")
+    return render_template('register.html',form=form)
+
+@users.route('/logout')
 def logout():
     logout_user()
     return redirect(url_for("core.index"))
