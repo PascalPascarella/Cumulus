@@ -13,8 +13,8 @@ from cumulus.users.picture_handler import add_profile_pic
 # REGISTER -- Complete
 # LOGIN -- Complete
 # LOGOUT -- Complete
-# ACCOUNT (UPDATE UserForm)
-# USER'S LIST OF POSTINGS
+# ACCOUNT (UPDATE UserForm) -- Complete
+# USER'S LIST OF POSTINGS -- Complete
 
 users = Blueprint('users',__name__)
 
