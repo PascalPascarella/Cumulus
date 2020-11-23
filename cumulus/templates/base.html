@@ -14,21 +14,24 @@
         <li class="nav-link">
             <a href="{{url_for('core.info')}}" class="href">ABOUT</a>
         </li>
+        {% if current_user.is_authenticated %}
         <li class="nav-link">
-            <a href="#" class="href">ACCOUNT</a>
-        </li>
-        <li class="nav-link">
-            <a href="#" class="href">REGISTER</a>
-        </li>
-        <li class="nav-link">
-            <a href="#" class="href">LOGIN</a>
-        </li>
-        <li class="nav-link">
-            <a href="#" class="href">LOGOUT</a>
+            <a href="{{url_for('users.account')}}" class="href">ACCOUNT</a>
         </li>
         <li class="nav-link">
             <a href="#" class="href">CREATE POST</a>
         </li>
+        <li class="nav-link">
+            <a href="{{url_for('users.logout')}}" class="href">LOGOUT</a>
+        </li>
+        {% else %}
+        <li class="nav-link">
+            <a href="{{url_for('users.register')}}" class="href">REGISTER</a>
+        </li>
+        <li class="nav-link">
+            <a href="{{url_for('users.login')}}" class="href">LOGIN</a>
+        </li>
+        {% endif %}
     </ul>
     <div class="container">
         {% block content %}
