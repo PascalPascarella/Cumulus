@@ -27,8 +27,10 @@ login_manager.login_view = 'users.login'
 
 from cumulus.core.views import core
 from cumulus.users.views import users
+from cumulus.postings.views import postings
 from cumulus.error_pages.handlers import error_pages
 
 app.register_blueprint(core)
 app.register_blueprint(users)
+app.register_blueprint(postings)
 app.register_blueprint(error_pages)

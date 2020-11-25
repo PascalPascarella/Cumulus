@@ -1,6 +1,7 @@
 from flask import render_template,url_for,flash,redirect,request,Blueprint
 from flask_login import login_user,current_user,logout_user,login_required
 from cumulus import db
+from werkzeug.security import generate_password_hash,check_password_hash
 from cumulus.models import User,Posting
 from cumulus.users.forms import RegistrationForm,LoginForm,UpdateUserForm
 from cumulus.users.picture_handler import add_profile_pic
@@ -91,7 +92,7 @@ def account():
 
 #
 @users.route('/<username>')
-def user_posts(username):
+def user_postings(username):
     page = request.args.get('page',1,type=int)
     user = User.query.filter_by(username=username).first_or_404()
     postings = Posting.query.filter_by(author=user).order_by(Posting.date.desc()).paginate(page=page,per_page=5)

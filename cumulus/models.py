@@ -43,5 +43,5 @@ class Posting(db.Model):
         self.user_id = user_id
 
     def __repr__(self):
-        return f"Post ID: {self.id} -- Date: {self.date} --- {self.title}"
+        return f"Post ID: {self.id} -- Date: {self.date} --- Title: {self.title}"
     
