@@ -10,39 +10,73 @@
     <title>Cumulus Team Chat</title>
 </head>
 <body>
-    
-    <ul class="nav">
-        <li class="nav-link">
-            <a href="{{url_for('core.index')}}" class="href">HOME</a>
-        </li>
-        <li class="nav-link">
-            <a href="{{url_for('core.info')}}" class="href">ABOUT</a>
-        </li>
-        {% if current_user.is_authenticated %}
-        <li class="nav-link">
-            <a href="{{url_for('users.account')}}" class="href">ACCOUNT</a>
-        </li>
-        <li class="nav-link">
-            <a href="{{url_for('postings.create_post')}}" class="href">CREATE POST</a>
-        </li>
-        <li class="nav-link">
-            <a href="{{url_for('users.logout')}}" class="href">LOGOUT</a>
-        </li>
-        {% else %}
-        <li class="nav-link">
-            <a href="{{url_for('users.register')}}" class="href">REGISTER</a>
-        </li>
-        <li class="nav-link">
-            <a href="{{url_for('users.login')}}" class="href">LOGIN</a>
-        </li>
-        {% endif %}
-    </ul>
-   
+    <nav class="sidebar">
+        <ul class="side-nav">
+            <li class="side-nav__item">
+                <a href="{{url_for('core.index')}}" class="side-nav__link">
+                    <svg class="side-nav__icon">
+                        <use xlink:href="img/sprite.svg#icon-home"></use>
+                    </svg>
+                    <span>HOME</span>
+                </a>
+            </li>
+            <li class="side-nav__item">
+                <a href="{{url_for('core.info')}}" class="side-nav__link">
+                    <svg class="side-nav__icon">
+                        <use xlink:href="img/sprite.svg#icon-aircraft-take-off"></use>
+                    </svg>
+                    <span>ABOUT</span>
+                </a>
+            </li>
+            {% if current_user.is_authenticated %}
+            <li class="side-nav__item">
+                <a href="{{url_for('users.account')}}" class="side-nav__link">
+                    <svg class="side-nav__icon">
+                        <use xlink:href="img/sprite.svg#icon-key"></use>
+                    </svg>
+                    <span>ACCOUNT</span>
+                </a>
+            </li>
+            <li class="side-nav__item">
+                <a href="{{url_for('postings.create_post')}}" class="side-nav__link">
+                    <svg class="side-nav__icon">
+                        <use xlink:href="img/sprite.svg#icon-map"></use>
+                    </svg>
+                    <span>CREATE POST</span>
+                </a>
+            </li>
+            <li class="side-nav__item">
+                <a href="{{url_for('users.logout')}}" class="side-nav__link">
+                    <svg class="side-nav__icon">
+                        <use xlink:href="img/sprite.svg#icon-map"></use>
+                    </svg>
+                    <span>LOGOUT</span>
+                </a>
+            </li>
+            {% else %}
+            <li class="side-nav__item">
+                <a href="{{url_for('users.register')}}" class="side-nav__link">
+                    <svg class="side-nav__icon">
+                        <use xlink:href="img/sprite.svg#icon-map"></use>
+                    </svg>
+                    <span>REGISTER</span>
+                </a>
+            </li>
+            <li class="side-nav__item">
+                <a href="{{url_for('users.login')}}" class="side-nav__link">
+                    <svg class="side-nav__icon">
+                        <use xlink:href="img/sprite.svg#icon-map"></use>
+                    </svg>
+                    <span>LOGIN</span>
+                </a>
+            </li>
+            {% endif %}
+        </ul>
+    </nav>
     <div class="container">
         {% block content %}
 
         {% endblock content %}
     </div>
-
 </body>
 </html>
