@@ -5,7 +5,7 @@
 
     --color-secondary: #5b4aeb;
     --color-secondary-light: #998ff3;
-    --color-secondary-dark: #2b17d1;
+    --color-secondary-dark: #1b2b38;
 
     --color-grey-light-1: #faf9f9;
     --color-grey-light-2: #f4f2f2;
@@ -53,8 +53,9 @@ body {
     font-weight: 400;
     line-height: 1.6;
     color: var(--color-grey-dark-2);
-    background-image: linear-gradient(to right bottom, var(--color-primary-light), var(--color-primary-dark));
+    background-image: url(../img/hero-large.jpg);
     background-size: cover;
+    background-position: center;
     background-repeat: no-repeat;
 
     min-height: 100vh;

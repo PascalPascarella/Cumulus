@@ -39,7 +39,8 @@
 }
 
 .sidebar {
-    background-color: var(--color-grey-dark-1);
+    background-image: linear-gradient(to left, black, var(--color-secondary-dark));
+
 
     flex: 0 0 18%;
 
@@ -47,3 +48,44 @@
     flex-direction: column;
     justify-content: space-between;
 }
+
+.view {
+    background-color: #fff;
+
+    flex: 1;
+}
+
+.detail {
+    font-size: 1.4rem;
+    display: flex;
+    padding: 4.5rem;
+    background-color: var(--color-grey-light-1);
+    border-bottom: var(--line);
+
+    @media only screen and (max-width: $bp-medium) {
+        padding: 3rem;
+    }
+
+    @media only screen and (max-width: $bp-small) {
+        flex-direction: column;
+    }
+}
+
+.description {
+    background-color: #fff;
+    box-shadow: var(--shadow-light);
+    padding: 3rem;
+    flex: 0 0 60%;
+    margin-right: 4.5rem;
+
+    @media only screen and (max-width: $bp-medium) {
+        padding: 2rem;
+        margin-right: 3rem;
+    }
+
+    @media only screen and (max-width: $bp-small) {
+        margin-right: 0;
+        margin-bottom: 3rem;
+    }
+}
+

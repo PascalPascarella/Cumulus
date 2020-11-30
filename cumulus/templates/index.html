@@ -1,9 +1,15 @@
 {% extends 'base.html' %}
-{% block content %}
+
+    
+    {% block header %}
     <div>
-        <h1>Your Company Cumulus</h1>
-        
+      <h1>Your Company Cumulus</h1>
+      
     </div>
+    {% endblock header %}
+      
+    
+    {% block content %}
     <div class="">
 
         {% for post in postings.items %}
