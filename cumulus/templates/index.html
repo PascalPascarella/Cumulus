@@ -14,17 +14,22 @@
 
         {% for post in postings.items %}
     
-        <div class="card" >
+        <div class="user-posts" >
     
-          <div class="card-body">
+          <figure class="post">
     
-    
-            <h2><a class="card-title" href="  {{ url_for('postings.posting',posting_id=post.id) }}">{{ post.title }}</a></h2>
-            <a href="{{ url_for('users.user_postings',username=post.author.username) }}">Written By: {{ post.author.username }}</a>
-            <p>Published on: {{ post.date.strftime('%Y-%m-%d') }}</p>
-            <p class="card-text">{{ post.text[:100] }}...</p>
-            <a href="{{ url_for('postings.posting',posting_id=post.id) }}" class="btn btn-primary">Read Post</a>
-          </div>
+            <blockquote class="post__text">
+              <h2><a class="card-title" href="  {{ url_for('postings.posting',posting_id=post.id) }}">{{ post.title }}</a></h2>
+              <p class="card-text">{{ post.text[:100] }}...</p>
+            </blockquote>
+            <figcaption class="post__user">
+              <div class="post__user-box">
+                <a href="{{ url_for('users.user_postings',username=post.author.username) }}" class="post__user-name">Written By: {{ post.author.username }}</a>
+                <p class="post__user-date">Published on: {{ post.date.strftime('%Y-%m-%d') }}</p>
+                <a href="{{ url_for('postings.posting',posting_id=post.id) }}" class="btn btn-primary">Read Post</a>
+              </div>
+            </figcaption>
+          </figure>
         </div>
     
        {% endfor %}

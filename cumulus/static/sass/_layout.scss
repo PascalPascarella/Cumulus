@@ -59,7 +59,10 @@
     font-size: 1.4rem;
     display: flex;
     padding: 4.5rem;
-    background-color: var(--color-grey-light-1);
+    background-image: linear-gradient(to left, rgba(236, 155, 71, .3), rgba(0, 0, 0, 1)),url(../img/hero-tall.jpg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
     border-bottom: var(--line);
 
     @media only screen and (max-width: $bp-medium) {
@@ -89,3 +92,10 @@
     }
 }
 
+.user-posts {
+    flex: 1;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
