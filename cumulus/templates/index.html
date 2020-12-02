@@ -23,6 +23,7 @@
               <p class="card-text">{{ post.text[:100] }}...</p>
             </blockquote>
             <figcaption class="post__user">
+              <img src="../static/img/placeholder.png" alt="User 1" class="post__photo">
               <div class="post__user-box">
                 <a href="{{ url_for('users.user_postings',username=post.author.username) }}" class="post__user-name">Written By: {{ post.author.username }}</a>
                 <p class="post__user-date">Published on: {{ post.date.strftime('%Y-%m-%d') }}</p>

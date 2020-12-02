@@ -21,15 +21,9 @@
                 {% if current_user.is_authenticated %}
                 <div class="user-nav__icon-box">
                     <svg class="user-nav__icon">
-                        <use xlink:href=""></use>
+                        <use xlink:href="static/img/sprite.svg#icon-chat"></use>
                     </svg>
                     <span class="user-nav__notification">7</span>
-                </div>
-                <div class="user-nav__icon-box">
-                    <svg class="user-nav__icon">
-                        <use xlink:href=""></use>
-                    </svg>
-                    <span class="user-nav__notification">13</span>
                 </div>
                 <div class="user-nav__user">
                     <img src="{{url_for('static',filename='profile_pics/'+current_user.profile_image)}}" alt="User photo" class="user-nav__user-photo">

@@ -6,17 +6,18 @@
     }
 
     &__input {
-        font-size: 1.5rem;
+        font-size: 2rem;
         font-family: inherit;
         color: inherit;
         padding: 1.5rem 2rem;
         border-radius: 2px;
-        background-color: rgba(white, .5);
+        background-color: rgba(175,215,230, .5);
         border: none;
         border-bottom: 3px solid transparent;
         width: 90%;
         display: block;
         transition: all .3s;
+        max-width: 75rem;
 
         @media only screen and (max-width: $bp-medium) {
             width: 100%;
@@ -105,6 +106,76 @@
     }
 }
 
+
+////////////////////////////////////////
+// ABOUT PHOTOS
+.composition {
+    position: relative;
+    right: -15rem;
+    top: 20rem;
+
+    &__photo {
+        width: 55%;
+        box-shadow: 0 1.5rem 4rem rgba(black, .4);
+        border-radius: 2px;
+        position: absolute;
+        z-index: 10;
+        transition: all .2s;
+        outline-offset: 2rem;
+
+        @media only screen and (max-width: $bp-medium) {
+            float: left;
+            position: relative;
+            width: 33.33333333%;
+            box-shadow: 0 1.5rem 3rem rgba(black, .2);
+        }
+
+        &--p1 {
+            left: 1rem;
+            top: -1rem;
+
+            @media only screen and (max-width: $bp-medium)  {
+                top: 0;
+                transform: scale(1.2);
+            }
+        }
+
+        &--p2 {
+            right: 0;
+            top: 2rem;
+
+            @media only screen and (max-width: $bp-medium)  {
+                top: -1rem;
+                transform: scale(1.3);
+                z-index: 100;
+            }
+        }
+
+        &--p3 {
+            left: 20%;
+            top: 10rem;
+
+            @media only screen and (max-width: $bp-medium)  {
+                top: 1rem;
+                left: 0;
+                transform: scale(1.1);
+            }
+        }
+
+        &:hover {
+            outline: 1.5rem solid var(--color-primary);
+            transform: scale(1.05) translateY(-.5rem);
+            box-shadow: 0 2.5rem 4rem rgba(black, .5);
+            z-index: 20;
+        }
+
+    }
+
+    &:hover &__photo:not(:hover) {
+        transform: scale(.95);
+    }
+    //composition:hover composition__photo:not(:hover) {
+}
 
 
 ////////////////////////////////////////
@@ -282,7 +353,7 @@
 // BUTTON INLINE
 .btn-inline {
     border: none;
-    color: var(--color-primary);
+    color: var(--color-grey-dark);
     font-size: inherit;
     border-bottom: 1px solid currentColor;
     padding-bottom: 2px;
@@ -290,6 +361,7 @@
     background-color: transparent;
     cursor: pointer;
     transition: all .2s;
+    
 
     & span {
         margin-left: 3px;
@@ -417,7 +489,7 @@
 ////////////////////////////////////////
 // POSTS
 .post {
-    background-color: #fff;
+    background: linear-gradient(to bottom, white 85%, grey);
     box-shadow: var(--shadow-light);
     padding: 3rem;
     margin-bottom: 3.5rem;

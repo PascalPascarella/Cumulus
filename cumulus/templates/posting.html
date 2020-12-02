@@ -1,6 +1,6 @@
 {% extends "base.html" %}
 <div class="">
-  <h1>{{ post.title }}</h1>
+  <h1 class="overview__heading">{{ post.title }}</h1>
 </div>
 {% block header %}
   
@@ -8,24 +8,32 @@
   
 
   {% block content %}
-<div>
-  <h2>Written by: {{post.author.username}}</h2>
-  <h3>Published: {{ post.date.strftime('%B %d, %Y') }}</h3>
-  <p>{{post.text}}</p>
+  <div class="user-posts"style="margin-top: 20rem;">
+    <figure class="post">
+      <blockquote class="post__text">
+        <h2>Written by: {{post.author.username}}</h2>
+        <h3>Published: {{ post.date.strftime('%B %d, %Y') }}</h3>
+        <p>{{post.text}}</p>
    {% if post.author == current_user %}
      <div>
-       <a class="btn" href="{{ url_for('postings.update', posting_id=post.id) }}">Update</a>
-       <button type="button" class="btn" data-toggle="modal" data-target="#del_modal">Delete</button>
+      <br>
+       <a class="btn-inline" href="{{ url_for('postings.update', posting_id=post.id) }}">Update</a>
+       <form action="{{ url_for('postings.delete_post', posting_id=post.id) }}" method="POST">
+        <input class="btn-inline" type="submit" value="Delete">
+      </form>
      </div>
+      </blockquote>
+  
    {% endif %}
+   </figure>  
 </div>
 
 
 
 
-  <!-- Testing Bootstrap Modal for Pop Up -->
+  <!-- Testing Bootstrap Modal for Pop Up Feature at Later Date -->
   {# https://getbootstrap.com/docs/4.1/components/modal/ #}
-  <div class="modal" tabindex="-1" role="dialog" id="del_modal">
+  {#<!-- <div class="modal" tabindex="-1" role="dialog" id="del_modal">
     <div class="modal-dialog" role="document">
       <div class="modal-content">
         <div class="modal-header">
@@ -46,6 +54,6 @@
         </div>
       </div>
     </div>
-  </div>
+  </div> -->#}
 
 {% endblock content %}

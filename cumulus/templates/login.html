@@ -2,17 +2,20 @@
 
 {% block header %}
     <div>
-        <h1>Welcome back! Please login below</h1>
+        <h1 class="overview__heading">Welcome back! Please login below</h1>
     </div>
 {% endblock header %}
     
 
 {% block content %}
-    <form action="" method="POST">
+<div class="description">
+    <form action="" method="POST" class="form">
         {{form.hidden_tag()}}
-        {{form.email.label}}{{form.email(class="")}}<br>
-        {{form.password.label}}{{form.password(class="")}}<br>
-        {{form.submit()}}
+        {{form.email.label(class="form__label")}}{{form.email(class='form__input')}}<br>
+        {{form.password.label(class="form__label")}}{{form.password(class='form__input')}}<br>
+        {{form.submit(class="btn-inline")}}
 
     </form>
+</div>
+    
 {% endblock content %}

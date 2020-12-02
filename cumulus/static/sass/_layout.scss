@@ -63,7 +63,7 @@
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    border-bottom: var(--line);
+    // border-bottom: var(--line);
 
     @media only screen and (max-width: $bp-medium) {
         padding: 3rem;
@@ -78,7 +78,7 @@
     background-color: #fff;
     box-shadow: var(--shadow-light);
     padding: 3rem;
-    flex: 0 0 60%;
+    flex: 0 0 70%;
     margin-right: 4.5rem;
 
     @media only screen and (max-width: $bp-medium) {
@@ -98,4 +98,8 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+}
+
+.edit__form {
+    padding: 6rem;
 }
